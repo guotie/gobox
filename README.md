@@ -1,0 +1,2 @@
+# gobox
+go sync box
