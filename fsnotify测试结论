@@ -1,0 +1,21 @@
+# fsnotify 测试结论
+
+1 消息类型
+  CREATE
+  REMOVE
+  WRITE
+  RENAME
+  CHMOD
+
+  消息类型的对象不区分文件和目录
+
+2 RENAME watch的目录
+
+当watch的目录修改了目录名字后，该目录下的行为不再被继续watch；当把该目录的名字改回去后，该目录下的行为也不会恢复。
+
+3 子目录
+在watch的目录下创建子目录，子目录不会被自动watch
+
+4 当子目录名字被修改时，evnet竟然是create？
+
+5 当目录下的文件被修改时，被监控的目录同样会收到event
